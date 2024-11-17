@@ -1,0 +1,185 @@
+/*FONT*/
+
+@font-face {
+	font-family: BebasNeue;
+	src: url(../font/BebasNeue-Regular.woff);
+}
+
+/*Style Utama*/
+
+body{
+	font: 18px/36px BebasNeue, Arial, Sans-Serif;
+
+}
+
+h1{
+	font-size: 80px;
+	margin: 50px 0;
+	text-align: center;
+	text-shadow: 1px 2px 1px white;
+}
+
+.kontainer{
+	width: 730px;
+	background: white;
+	margin: auto;
+	padding: 20px;
+	box-shadow: 0 0 3px 3px rgba(0,0,0,.3);
+	border-radius: 10px;
+
+}
+
+.galeri li{
+	width: 120px;
+	height: 120px;
+	border: 3px solid #729EA5;
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	position: relative;
+
+}
+
+.galeri li img,
+.galeri li span,
+.galeri li{
+	border-radius: 50%;
+}
+
+.galeri li span{
+	width: 120px;
+	height: 120px;
+	display: block;
+	background-color: rgba(235,141,249,.5);
+	position: absolute;
+	top: 0;
+	text-align: center;
+	line-height: 120px;
+	color: white;
+	text-shadow: 2px 1px 1px black;
+	opacity: 0;
+	transform: scale(0) rotate(0);
+	transition: .4s
+
+}
+
+.galeri li a:hover span{
+	transform: scale(1) rotate(360deg);
+	opacity: 1;
+}
+
+
+
+
+
+
+.clear{
+	clear: both;
+}
+
+/*overlay*/
+.overlay{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0);
+	z-index: 9999;
+	transition: .8s;
+	padding: 100px 0;
+	text-align: center;
+}
+
+.overlay:target{
+	width: auto;
+	height: auto;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.8);
+
+}
+
+.overlay img{
+	max-height: 100%;
+	box-shadow: 2px 2px 9px rgba(0,0,0,.7)
+
+}
+
+.overlay:target img {
+	animation: zoomfade 1s;
+}
+
+.overlay:target .tutup {
+	animation: slidedown .5s .5s forwards;
+
+}
+
+.overlay:target .link {
+	animation: slidedown .5s .5s forwards;
+
+}
+
+
+/*animasi*/
+@keyframes zoomfade {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	
+}
+
+.overlay .tutup {
+	position: absolute;
+	top: 45px;
+	left: 40%;
+	margin-left: ;
+	color: white;
+	font-size: 20px;
+	text-decoration: none;
+	background-color: red;
+	border: 3px solid white;
+	line-height: 15px;
+	padding: 5px;
+	opacity: 0;
+
+}
+
+.overlay .link {
+	position: absolute;
+	top: 45px;
+	left: 55%;
+	margin-left: ;
+	color: white;
+	font-size: 20px;
+	text-decoration: none;
+	background-color: green;
+	border: 3px solid white;
+	line-height: 15px;
+	padding: 5px;
+	opacity: 0;
+
+}
+
+@keyframes slidedown {
+	0% {
+		opacity: 0;
+		margin-top: -25px; 
+
+	}
+
+	100% {
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+
+
